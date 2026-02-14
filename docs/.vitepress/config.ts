@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress';
 export default defineConfig({
     title: 'Vue-MF2',
     description: 'A VitePress Site',
+    base: '/vue-mf2/',
     vite: {
         esbuild: {
             jsx: 'automatic',
