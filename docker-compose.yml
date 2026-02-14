@@ -1,0 +1,28 @@
+services:
+  node:
+    image: node:24
+    working_dir: /var/www
+    command: tail -f /dev/null
+    volumes:
+      - ./:/var/www
+    networks:
+      - default # include any other docker networks first
+      - ingress-net # include ingress-net last
+    ports:
+        - "5173:5173"
+        - "4173:4173"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=ingress-net"
+      - "traefik.http.routers.vue-mf2.rule=Host(`${APP_URN}`)"
+      - "traefik.http.routers.vue-mf2.entrypoints=websecure"
+      - "traefik.http.routers.vue-mf2.tls=true"
+      - "traefik.http.routers.vue-mf2.tls.certresolver=default"
+      - "traefik.http.routers.vue-mf2.service=vue-mf2"
+      - "traefik.http.routers.vue-mf2.priority=1000"
+      - "traefik.http.services.vue-mf2.loadbalancer.server.port=5173"
+
+networks:
+  ingress-net:
+    name: ingress-net
+    external: true

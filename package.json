@@ -1,0 +1,55 @@
+{
+  "name": "vue-mf2",
+  "version": "0.1.0",
+  "description": "Lightweight Vue 3 i18n plugin powered by MessageFormat 2",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "yarn clean && yarn build:js && yarn build:types",
+    "build:js": "vite build --configLoader runner",
+    "build:types": "tsc -p tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "docs:dev": "vitepress dev docs --host 0.0.0.0",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "test": "vitest run --configLoader runner",
+    "test:coverage": "vitest run --coverage --configLoader runner",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "vue",
+    "i18n",
+    "messageformat",
+    "mf2"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "dependencies": {
+    "messageformat": "^4.0.0-13"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "@vitest/coverage-v8": "^3.0.5",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.1",
+    "vitepress": "^2.0.0-alpha.16",
+    "vitest": "^3.0.5",
+    "vue": "^3.5.28"
+  }
+}
