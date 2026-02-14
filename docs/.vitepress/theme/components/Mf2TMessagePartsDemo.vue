@@ -1,13 +1,13 @@
 <template>
   <section class="mf2t-demo">
-    <Mf2T keypath="help_and_support" tag="p">
+    <mf2-t keypath="help_and_support" tag="p">
       <template #resetButton>
         <button class="reset-btn" type="button">Reset password</button>
       </template>
       <template #helpLink="{ value }">
         <a href="#help">{{ value }}</a>
       </template>
-    </Mf2T>
+    </mf2-t>
 
     <details>
       <summary>Raw parts ($tp)</summary>

@@ -15,8 +15,12 @@ export default defineConfig({
         // https://vitepress.dev/reference/default-theme-config
         nav: [
             {text: 'Home', link: '/'},
-            {text: 'Examples', link: '/markdown-examples'},
+            {text: 'Get started', link: '/guide/introduction/getting-started'},
         ],
+
+        search: {
+            provider: 'local'
+        },
 
         sidebar: [
             {
@@ -44,7 +48,7 @@ export default defineConfig({
         ],
 
         socialLinks: [
-            {icon: 'github', link: 'https://github.com/vuejs/vitepress'},
+            {icon: 'github', link: 'https://github.com/hyrioo/vue-mf2'},
         ],
     },
 });

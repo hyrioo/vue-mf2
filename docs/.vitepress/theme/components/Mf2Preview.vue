@@ -1,11 +1,11 @@
 <template>
   <div class="mf2-preview">
     <div class="mf2-preview__title">{{ title }}</div>
-    <Mf2T :keypath="keypath" :args="args" :tag="tag" :instance="instance">
+    <mf2-t :keypath="keypath" :args="args" :tag="tag" :instance="instance">
       <template v-for="(_, slotName) in slots" #[slotName]="slotProps">
         <slot :name="slotName" v-bind="slotProps" />
       </template>
-    </Mf2T>
+    </mf2-t>
   </div>
 </template>
 

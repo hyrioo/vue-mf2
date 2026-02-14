@@ -3,23 +3,22 @@
 layout: home
 
 hero:
-  name: "Vue MF2"
-  text: "MessageFormat 2 plugin for Vue.js"
-  tagline: My great project tagline
+  name: "vue-mf2"
+  text: "MessageFormat 2 for Vue 3"
+  tagline: "Composable i18n with rich message parts, markups, and custom functions."
   actions:
     - theme: brand
-      text: Get started
-      link: /guide/getting-started
+      text: "Get started"
+      link: "/guide/introduction/getting-started"
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: "GitHub"
+      link: "https://github.com/hyrioo/vue-mf2"
 
 features:
-  - title: MessageFormat 2
-    details: i18n built specifically for MessageFormat 2
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: "MF2-First Runtime"
+    details: "Use Unicode MessageFormat 2 syntax for selectors, formatting, and structured parts."
+  - title: "Rich Message Rendering"
+    details: "Render markups and placeholders with slots, including nested parts."
+  - title: "Extensible by Design"
+    details: "Add custom markup renderers and custom functions when built-ins are not enough."
 ---
-

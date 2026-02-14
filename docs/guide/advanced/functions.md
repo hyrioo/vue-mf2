@@ -152,9 +152,9 @@ Example messages:
 }
 ```
 
-## Render with `Mf2T`
+## Render with `<mf2-t>`
 
-`Mf2T` also works with function-based messages.
+`<mf2-t>` also works with function-based messages.
 
 ```vue
 <script setup lang="ts">
@@ -162,7 +162,7 @@ const now = new Date('2026-02-14T12:34:56Z');
 </script>
 
 <template>
-  <Mf2T keypath="datetime_label" :args="{ value: now }" tag="p" />
+  <mf2-t keypath="datetime_label" :args="{ value: now }" tag="p" />
 </template>
 ```
 

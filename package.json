@@ -2,6 +2,14 @@
   "name": "vue-mf2",
   "version": "0.1.0",
   "description": "Lightweight Vue 3 i18n plugin powered by MessageFormat 2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyrioo/vue-mf2.git"
+  },
+  "homepage": "https://hyrioo.github.io/vue-mf2/",
+  "bugs": {
+    "url": "https://github.com/hyrioo/vue-mf2/issues"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -26,6 +34,7 @@
     "docs:dev": "vitepress dev docs --host 0.0.0.0",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
+    "prepack": "yarn test && yarn build",
     "test": "vitest run --configLoader runner",
     "test:coverage": "vitest run --coverage --configLoader runner",
     "test:watch": "vitest"

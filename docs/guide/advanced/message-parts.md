@@ -1,6 +1,6 @@
 # Message parts
 
-`Mf2T` can render rich messages with slots, including placeholders and markup spans.
+`<mf2-t>` can render rich messages with slots, including placeholders and markup spans.
 
 <Mf2TMessagePartsDemo />
 
@@ -17,8 +17,8 @@ Example shape:
   <template #resetButton>
     <button>Reset password</button>
   </template>
-  <template #helpLink="{ $content }">
-    <a href="#help">{{ $content }}</a>
+  <template #helpLink="{ value }">
+    <a href="#help">{{ value }}</a>
   </template>
 </mf2-t>
 ```

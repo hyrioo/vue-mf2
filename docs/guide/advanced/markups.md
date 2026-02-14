@@ -141,5 +141,5 @@ const mf2 = createMf2({
 ## Slots vs renderers
 
 - Use `markups` when you want global rendering behavior by markup name.
-- Use `<Mf2T>` slots when you want per-call/per-component rendering behavior.
+- Use `<mf2-t>` slots when you want per-call/per-component rendering behavior.
 - See [Message Parts](./message-parts.md) for slot-based rich message rendering examples.
