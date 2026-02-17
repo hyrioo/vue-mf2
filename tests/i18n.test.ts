@@ -45,6 +45,23 @@ describe('createMf2', () => {
 
     expect(mf2.global.t('broken', { name: 'Ada' })).toBe('Hello {');
   });
+
+  it('resolves useMf2() outside setup after plugin installation', () => {
+    const mf2 = createMf2({
+      locale: 'en-US',
+      bundles: [new Mf2Bundle('en-US').addResource({ greeting: 'Hello {$name}' })]
+    });
+
+    const fakeApp = {
+      provide: () => undefined,
+      component: () => undefined
+    };
+
+    mf2.install(fakeApp as never);
+
+    const { $t } = useMf2();
+    expect(stripBidiIsolation($t('greeting', { name: 'Ada' }))).toBe('Hello Ada');
+  });
 });
 
 it('supports createMf2 + Mf2Bundle', () => {

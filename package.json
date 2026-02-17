@@ -1,6 +1,6 @@
 {
   "name": "vue-mf2",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lightweight Vue 3 i18n plugin powered by MessageFormat 2",
   "repository": {
     "type": "git",
@@ -53,6 +53,7 @@
     "messageformat": "^4.0.0-13"
   },
   "devDependencies": {
+    "@vitejs/plugin-vue-jsx": "^4.1.1",
     "@types/node": "^22.13.0",
     "@vitest/coverage-v8": "^3.0.5",
     "typescript": "^5.7.3",

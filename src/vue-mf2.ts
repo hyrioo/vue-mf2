@@ -23,6 +23,7 @@ export interface UseMf2Composer {
 }
 
 const MF2_SYMBOL: InjectionKey<Mf2Composer> = Symbol('vue-mf2');
+let installedComposer: Mf2Composer | null = null;
 
 export function createMf2(options: CreateMf2Options): Mf2Plugin {
   const resolveMarkupRenderer = createMarkupRendererResolver(options.markups);
@@ -36,6 +37,7 @@ export function createMf2(options: CreateMf2Options): Mf2Plugin {
   return {
       global,
       install(app: App): void {
+          installedComposer = global;
           app.provide(MF2_SYMBOL, global);
           app.component('Mf2T', Mf2TComponent);
       }
@@ -54,7 +56,11 @@ function getComposer(mf2?: Mf2Plugin): Mf2Composer {
     }
   }
 
-  throw new Error('No MF2 instance found. Use useMf2(mf2) outside setup(), or install the plugin and call useMf2() inside setup().');
+  if (installedComposer) {
+    return installedComposer;
+  }
+
+  throw new Error('No MF2 instance found. Pass useMf2(mf2), or install the plugin before calling useMf2() outside setup().');
 }
 
 export function useMf2Composer(mf2?: Mf2Plugin): Mf2Composer {
